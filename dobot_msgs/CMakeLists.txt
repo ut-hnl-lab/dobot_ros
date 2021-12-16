@@ -76,19 +76,18 @@ add_service_files(
   GetIODI.srv
   GetIOADC.srv
   SetEMotor.srv
+  GetInfraredSensor.srv
+  SetInfraredSensor.srv
+
+  SetColorSensor.srv
+  GetColorSensor.srv
 
   SetQueuedCmdStartExec.srv
   SetQueuedCmdStopExec.srv
   SetQueuedCmdForceStopExec.srv
   SetQueuedCmdClear.srv
+
 )
-
-# add_action_files(
-#   FILES
-#   Action1.action
-#   Action2.action
-# )
-
 generate_messages(
   DEPENDENCIES
   std_msgs

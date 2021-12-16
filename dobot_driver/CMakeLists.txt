@@ -8,6 +8,7 @@ find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   dobot_msgs
 )
+set(CMAKE_CXX_FLAGS "-fPIC")
 
 catkin_package(
   CATKIN_DEPENDS roscpp rospy dobot_api geometry_msgs dobot_msgs

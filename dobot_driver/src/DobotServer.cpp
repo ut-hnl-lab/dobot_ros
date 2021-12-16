@@ -19,7 +19,7 @@ void InitCmdTimeoutServices(ros::NodeHandle &n, std::vector<ros::ServiceServer> 
 {
     ros::ServiceServer server;
 
-    server = n.advertiseService("/DobotServer/SetCmdTimeout", SetCmdTimeoutService);
+    server = n.advertiseService("DobotServer/SetCmdTimeout", SetCmdTimeoutService);
     serverVec.push_back(server);
 }
 
@@ -84,13 +84,13 @@ void InitDeviceInfoServices(ros::NodeHandle &n, std::vector<ros::ServiceServer> 
 {
     ros::ServiceServer server;
 
-    server = n.advertiseService("/DobotServer/GetDeviceSN", GetDeviceSNService);
+    server = n.advertiseService("DobotServer/GetDeviceSN", GetDeviceSNService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/SetDeviceName", SetDeviceNameService);
+    server = n.advertiseService("DobotServer/SetDeviceName", SetDeviceNameService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/GetDeviceName", GetDeviceNameService);
+    server = n.advertiseService("DobotServer/GetDeviceName", GetDeviceNameService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/GetDeviceVersion", GetDeviceVersionService);
+    server = n.advertiseService("DobotServer/GetDeviceVersion", GetDeviceVersionService);
     serverVec.push_back(server);
 }
 
@@ -121,7 +121,7 @@ void InitPoseServices(ros::NodeHandle &n, std::vector<ros::ServiceServer> &serve
 {
     ros::ServiceServer server;
 
-    server = n.advertiseService("/DobotServer/GetPose", GetPoseService);
+    server = n.advertiseService("DobotServer/GetPose", GetPoseService);
     serverVec.push_back(server);
 }
 
@@ -157,9 +157,9 @@ void InitAlarmsServices(ros::NodeHandle &n, std::vector<ros::ServiceServer> &ser
 {
     ros::ServiceServer server;
 
-    server = n.advertiseService("/DobotServer/GetAlarmsState", GetAlarmsStateService);
+    server = n.advertiseService("DobotServer/GetAlarmsState", GetAlarmsStateService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/ClearAllAlarmsState", ClearAllAlarmsStateService);
+    server = n.advertiseService("DobotServer/ClearAllAlarmsState", ClearAllAlarmsStateService);
     serverVec.push_back(server);
 }
 
@@ -220,11 +220,11 @@ void InitHOMEServices(ros::NodeHandle &n, std::vector<ros::ServiceServer> &serve
 {
     ros::ServiceServer server;
 
-    server = n.advertiseService("/DobotServer/SetHOMEParams", SetHOMEParamsService);
+    server = n.advertiseService("DobotServer/SetHOMEParams", SetHOMEParamsService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/GetHOMEParams", GetHOMEParamsService);
+    server = n.advertiseService("DobotServer/GetHOMEParams", GetHOMEParamsService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/SetHOMECmd", SetHOMECmdService);
+    server = n.advertiseService("DobotServer/SetHOMECmd", SetHOMECmdService);
     serverVec.push_back(server);
 }
 
@@ -350,21 +350,21 @@ void InitEndEffectorServices(ros::NodeHandle &n, std::vector<ros::ServiceServer>
 {
     ros::ServiceServer server;
 
-    server = n.advertiseService("/DobotServer/SetEndEffectorParams", SetEndEffectorParamsService);
+    server = n.advertiseService("DobotServer/SetEndEffectorParams", SetEndEffectorParamsService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/GetEndEffectorParams", GetEndEffectorParamsService);
+    server = n.advertiseService("DobotServer/GetEndEffectorParams", GetEndEffectorParamsService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/SetEndEffectorLaser", SetEndEffectorLaserService);
+    server = n.advertiseService("DobotServer/SetEndEffectorLaser", SetEndEffectorLaserService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/GetEndEffectorLaser", GetEndEffectorLaserService);
+    server = n.advertiseService("DobotServer/GetEndEffectorLaser", GetEndEffectorLaserService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/SetEndEffectorSuctionCup", SetEndEffectorSuctionCupService);
+    server = n.advertiseService("DobotServer/SetEndEffectorSuctionCup", SetEndEffectorSuctionCupService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/GetEndEffectorSuctionCup", GetEndEffectorSuctionCupService);
+    server = n.advertiseService("DobotServer/GetEndEffectorSuctionCup", GetEndEffectorSuctionCupService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/SetEndEffectorGripper", SetEndEffectorGripperService);
+    server = n.advertiseService("DobotServer/SetEndEffectorGripper", SetEndEffectorGripperService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/GetEndEffectorGripper", GetEndEffectorGripperService);
+    server = n.advertiseService("DobotServer/GetEndEffectorGripper", GetEndEffectorGripperService);
     serverVec.push_back(server);
 }
 
@@ -494,19 +494,19 @@ void InitJOGServices(ros::NodeHandle &n, std::vector<ros::ServiceServer> &server
 {
     ros::ServiceServer server;
 
-    server = n.advertiseService("/DobotServer/SetJOGJointParams", SetJOGJointParamsService);
+    server = n.advertiseService("DobotServer/SetJOGJointParams", SetJOGJointParamsService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/GetJOGJointParams", GetJOGJointParamsService);
+    server = n.advertiseService("DobotServer/GetJOGJointParams", GetJOGJointParamsService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/SetJOGCoordinateParams", SetJOGCoordinateParamsService);
+    server = n.advertiseService("DobotServer/SetJOGCoordinateParams", SetJOGCoordinateParamsService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/GetJOGCoordinateParams", GetJOGCoordinateParamsService);
+    server = n.advertiseService("DobotServer/GetJOGCoordinateParams", GetJOGCoordinateParamsService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/SetJOGCommonParams", SetJOGCommonParamsService);
+    server = n.advertiseService("DobotServer/SetJOGCommonParams", SetJOGCommonParamsService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/GetJOGCommonParams", GetJOGCommonParamsService);
+    server = n.advertiseService("DobotServer/GetJOGCommonParams", GetJOGCommonParamsService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/SetJOGCmd", SetJOGCmdService);
+    server = n.advertiseService("DobotServer/SetJOGCmd", SetJOGCmdService);
     serverVec.push_back(server);
 }
 
@@ -667,23 +667,23 @@ void InitPTPServices(ros::NodeHandle &n, std::vector<ros::ServiceServer> &server
 {
     ros::ServiceServer server;
 
-    server = n.advertiseService("/DobotServer/SetPTPJointParams", SetPTPJointParamsService);
+    server = n.advertiseService("DobotServer/SetPTPJointParams", SetPTPJointParamsService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/GetPTPJointParams", GetPTPJointParamsService);
+    server = n.advertiseService("DobotServer/GetPTPJointParams", GetPTPJointParamsService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/SetPTPCoordinateParams", SetPTPCoordinateParamsService);
+    server = n.advertiseService("DobotServer/SetPTPCoordinateParams", SetPTPCoordinateParamsService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/GetPTPCoordinateParams", GetPTPCoordinateParamsService);
+    server = n.advertiseService("DobotServer/GetPTPCoordinateParams", GetPTPCoordinateParamsService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/SetPTPJumpParams", SetPTPJumpParamsService);
+    server = n.advertiseService("DobotServer/SetPTPJumpParams", SetPTPJumpParamsService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/GetPTPJumpParams", GetPTPJumpParamsService);
+    server = n.advertiseService("DobotServer/GetPTPJumpParams", GetPTPJumpParamsService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/SetPTPCommonParams", SetPTPCommonParamsService);
+    server = n.advertiseService("DobotServer/SetPTPCommonParams", SetPTPCommonParamsService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/GetPTPCommonParams", GetPTPCommonParamsService);
+    server = n.advertiseService("DobotServer/GetPTPCommonParams", GetPTPCommonParamsService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/SetPTPCmd", SetPTPCmdService);
+    server = n.advertiseService("DobotServer/SetPTPCmd", SetPTPCmdService);
     serverVec.push_back(server);
 }
 
@@ -749,11 +749,11 @@ void InitCPServices(ros::NodeHandle &n, std::vector<ros::ServiceServer> &serverV
 {
     ros::ServiceServer server;
 
-    server = n.advertiseService("/DobotServer/SetCPParams", SetCPParamsService);
+    server = n.advertiseService("DobotServer/SetCPParams", SetCPParamsService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/GetCPParams", GetCPParamsService);
+    server = n.advertiseService("DobotServer/GetCPParams", GetCPParamsService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/SetCPCmd", SetCPCmdService);
+    server = n.advertiseService("DobotServer/SetCPCmd", SetCPCmdService);
     serverVec.push_back(server);
 }
 
@@ -822,11 +822,11 @@ void InitARCServices(ros::NodeHandle &n, std::vector<ros::ServiceServer> &server
 {
     ros::ServiceServer server;
 
-    server = n.advertiseService("/DobotServer/SetARCParams", SetARCParamsService);
+    server = n.advertiseService("DobotServer/SetARCParams", SetARCParamsService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/GetARCParams", GetARCParamsService);
+    server = n.advertiseService("DobotServer/GetARCParams", GetARCParamsService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/SetARCCmd", SetARCCmdService);
+    server = n.advertiseService("DobotServer/SetARCCmd", SetARCCmdService);
     serverVec.push_back(server);
 }
 
@@ -853,7 +853,7 @@ void InitWAITServices(ros::NodeHandle &n, std::vector<ros::ServiceServer> &serve
 {
     ros::ServiceServer server;
 
-    server = n.advertiseService("/DobotServer/SetWAITCmd", SetWAITCmdService);
+    server = n.advertiseService("DobotServer/SetWAITCmd", SetWAITCmdService);
     serverVec.push_back(server);
 }
 
@@ -883,7 +883,7 @@ void InitTRIGServices(ros::NodeHandle &n, std::vector<ros::ServiceServer> &serve
 {
     ros::ServiceServer server;
 
-    server = n.advertiseService("/DobotServer/SetTRIGCmd", SetTRIGCmdService);
+    server = n.advertiseService("DobotServer/SetTRIGCmd", SetTRIGCmdService);
     serverVec.push_back(server);
 }
 
@@ -1032,23 +1032,23 @@ void InitEIOServices(ros::NodeHandle &n, std::vector<ros::ServiceServer> &server
 {
     ros::ServiceServer server;
 
-    server = n.advertiseService("/DobotServer/SetIOMultiplexing", SetIOMultiplexingService);
+    server = n.advertiseService("DobotServer/SetIOMultiplexing", SetIOMultiplexingService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/GetIOMultiplexing", GetIOMultiplexingService);
+    server = n.advertiseService("DobotServer/GetIOMultiplexing", GetIOMultiplexingService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/SetIODO", SetIODOService);
+    server = n.advertiseService("DobotServer/SetIODO", SetIODOService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/GetIODO", GetIODOService);
+    server = n.advertiseService("DobotServer/GetIODO", GetIODOService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/SetIOPWM", SetIOPWMService);
+    server = n.advertiseService("DobotServer/SetIOPWM", SetIOPWMService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/GetIOPWM", GetIOPWMService);
+    server = n.advertiseService("DobotServer/GetIOPWM", GetIOPWMService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/GetIODI", GetIODIService);
+    server = n.advertiseService("DobotServer/GetIODI", GetIODIService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/GetIOADC", GetIOADCService);
+    server = n.advertiseService("DobotServer/GetIOADC", GetIOADCService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/SetEMotor", SetEMotorService);
+    server = n.advertiseService("DobotServer/SetEMotor", SetEMotorService);
     serverVec.push_back(server);
 }
 
@@ -1092,13 +1092,13 @@ void InitQueuedCmdServices(ros::NodeHandle &n, std::vector<ros::ServiceServer> &
 {
     ros::ServiceServer server;
 
-    server = n.advertiseService("/DobotServer/SetQueuedCmdStartExec", SetQueuedCmdStartExecService);
+    server = n.advertiseService("DobotServer/SetQueuedCmdStartExec", SetQueuedCmdStartExecService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/SetQueuedCmdStopExec", SetQueuedCmdStopExecService);
+    server = n.advertiseService("DobotServer/SetQueuedCmdStopExec", SetQueuedCmdStopExecService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/SetQueuedCmdForceStopExec", SetQueuedCmdForceStopExecService);
+    server = n.advertiseService("DobotServer/SetQueuedCmdForceStopExec", SetQueuedCmdForceStopExecService);
     serverVec.push_back(server);
-    server = n.advertiseService("/DobotServer/SetQueuedCmdClear", SetQueuedCmdClearService);
+    server = n.advertiseService("DobotServer/SetQueuedCmdClear", SetQueuedCmdClearService);
     serverVec.push_back(server);
 }
 
