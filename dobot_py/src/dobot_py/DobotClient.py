@@ -3,7 +3,6 @@ import rospy
 
 from dobot_msgs.srv import *
 
-
 def run(command, *args, **kwargs):
     rospy.wait_for_service('{}'.format(command.__name__))
     cmd = rospy.ServiceProxy('{}'.format(command.__name__), command)
