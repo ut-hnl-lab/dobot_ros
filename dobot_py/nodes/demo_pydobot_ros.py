@@ -8,7 +8,7 @@ import tkinter as tk
 if __name__ == "__main__":
     dobot = Dobot('dobot1')
     dobot.home()
-    dobot.speed(400, 400, 400, 400)
+    dobot.speed(400, 400)
     dobot.move_to(200, 0, 0, 0)
     dobot.move_to(250, 0, 0, 0)
     dobot.wait(1000)
