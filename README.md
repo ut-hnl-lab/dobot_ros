@@ -1,45 +1,43 @@
-## Dobot Magician ROS stack
-
+# dobot_ros
 This repository contains the Dobot Magician API code and ROS drivers,
 repackaged in a more ROSified way.
 
-## Changes to original code
+# Requirement
+* Ubuntu 20.04
+* ROS noetic
 
-The controller node in the ros_driver package provides a crude velocity
-controller.
-
-### Start ROS
-
+# Installation
+```bash
+cd ~/catkin_ws/src
+git clone https://github.com/shuto1441/dobot_ros.git
+cd ../
+catkin build
 ```
-roscore
-```
 
+# Usage
 ### Launch the Server
 DobotServer.cpp is required to run dobot's server.
 Please rewrite the port name.
 ```
 rosrun dobot_driver DobotServer Portname
 ```
-### Writing a Client
-Functions for running dobot on client are organized in DobotClient.py.
-Import DobotClient.py to create a client
-```
-from dobot_py import DobotClient as dc
-```
 
-## Demo
 ### Launch the Sample Python Code 
 ```
-rosrun dobot_driver DobotServer Portname
 rosrun dobot_py tk_controller.py
 ```
 
 ### Launch the Sample C++ Code 
 ```
-rosrun dobot_driver DobotServer Portname
 rosrun dobot_bringup DobotClient_JOG
 ```
-```
-rosrun dobot_driver DobotServer Portname
-rosrun dobot_bringup DobotClient_PTP
-```
+
+# Author
+* [shuto1441](https://github.com/shuto1441)
+
+# Reference
+https://afrel.co.jp/dobot/
+
+
+
+
