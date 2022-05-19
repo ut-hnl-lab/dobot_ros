@@ -4,9 +4,10 @@ import rospy
 from dobot_msgs.srv import *
 from .ptpMode import PTPMode
 
+
 class Dobot:
 
-    def __init__(self, namespace = None):
+    def __init__(self, namespace=None):
         self.namespace = namespace
 
     def move_to(self, x, y, z, r):
@@ -18,16 +19,23 @@ class Dobot:
     def grip(self, enable):
         self._set_end_effector_gripper(1, enable, 1)
 
-    def speed(self, Velocity, Acceration, velocityRatio=100., accerationRatio=100.,):
+    def speed(
+        self,
+        Velocity,
+        Acceration,
+        velocityRatio=100.,
+        accerationRatio=100.,
+    ):
         self._set_ptp_common_params(velocityRatio, accerationRatio, 1)
-        self._set_ptp_coordinate_params(Velocity, Velocity, Acceration, Acceration, 1)
+        self._set_ptp_coordinate_params(
+            Velocity, Velocity, Acceration, Acceration, 1)
 
     def wait(self, ms):
         self._set_wait_cmd(ms)
 
     def pose(self):
         return self._get_pose()
-    
+
     def home(self):
         self._set_home_cmd()
 
@@ -71,7 +79,6 @@ class Dobot:
         """
         return self._run(SetEndEffectorSuctionCup, enableCtrl, suck, isQueued)
 
-
     def _set_wait_cmd(self, timeout):
         """
         Args:
@@ -107,9 +114,19 @@ class Dobot:
             uint64 queuedCmdIndex
 
         """
-        return self._run(SetPTPCommonParams, velocityRatio, accerationRatio, isQueued)
+        return self._run(
+            SetPTPCommonParams,
+            velocityRatio,
+            accerationRatio,
+            isQueued)
 
-    def _set_ptp_coordinate_params(self, xyzVelocity, rVelocity, xyzAcceration, rAcceration, isQueued):
+    def _set_ptp_coordinate_params(
+            self,
+            xyzVelocity,
+            rVelocity,
+            xyzAcceration,
+            rAcceration,
+            isQueued):
         """
         Args:
             float32 xyzVelocity
@@ -122,7 +139,13 @@ class Dobot:
             int32 result
             uint64 queuedCmdIndex
         """
-        return self._run(SetPTPCoordinateParams, xyzVelocity, rVelocity, xyzAcceration, rAcceration, isQueued)
+        return self._run(
+            SetPTPCoordinateParams,
+            xyzVelocity,
+            rVelocity,
+            xyzAcceration,
+            rAcceration,
+            isQueued)
 
     def _set_home_cmd(self):
         """
@@ -133,11 +156,13 @@ class Dobot:
         return self._run(SetHOMECmd)
 
     def _run(self, command, *args, **kwargs):
-        if self.namespace == None:
+        if self.namespace is None:
             rospy.wait_for_service('{}'.format(command.__name__))
             cmd = rospy.ServiceProxy('{}'.format(command.__name__), command)
         else:
-            rospy.wait_for_service('/{}/{}'.format(self.namespace, command.__name__))
-            cmd = rospy.ServiceProxy('/{}/{}'.format(self.namespace, command.__name__), command)
+            rospy.wait_for_service(
+                '/{}/{}'.format(self.namespace, command.__name__))
+            cmd = rospy.ServiceProxy(
+                '/{}/{}'.format(self.namespace, command.__name__), command)
         response = cmd(*args, **kwargs)
         return response

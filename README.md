@@ -8,6 +8,7 @@ repackaged in a more ROSified way.
 
 # Installation
 ```bash
+sudo apt install libqt5serialport5 libqt5serialport5-dev
 cd ~/catkin_ws/src
 git clone https://github.com/shuto1441/dobot_ros.git
 cd ../
@@ -18,18 +19,27 @@ catkin build
 ### Launch the Server
 DobotServer.cpp is required to run dobot's server.
 Please rewrite the port name.
-```
+```bash
 rosrun dobot_driver DobotServer Portname
 ```
 
 ### Launch the Sample Python Code 
-```
+```bash
 rosrun dobot_py tk_controller.py
 ```
-
-### Launch the Sample C++ Code 
+```bash
+rosrun dobot_py demo_pydobot_ros.py
 ```
-rosrun dobot_bringup DobotClient_JOG
+# Examples
+```bash
+dobot = Dobot() # Dobot class call Dobot(namespace). If you use multiple dobots, you need to set namespace.
+dobot.home() # return to home position
+dobot.speed(400, 400) # setting dobot speed (Velocity, Acceration)
+dobot.move_to(200, 0, 0, 0) # setting dobot move to position (x, y, z, r)
+dobot.wait(1000) # dobot wait(ms)
+dobot.suck(1) # Sucker attachment 1: on 0: off
+dobot.grip(1) # Gripper attachment 1: on 0: off
+print(dobot.pose()) # return dobot current position
 ```
 
 # Author

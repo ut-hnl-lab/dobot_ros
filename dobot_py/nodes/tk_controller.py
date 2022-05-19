@@ -3,7 +3,12 @@ from __future__ import print_function
 
 from dobot_py import DobotClient as dc
 from dobot_py.jogMode import JOGMode
-import tkinter as tk
+import sys
+
+if sys.version_info.major == 2:
+    import Tkinter as tk
+else:
+    import tkinter as tk
 
 if __name__ == "__main__":
     isJoint = False
